@@ -6,18 +6,10 @@ public static class MinimumGame
 {
     public static ColorSet MinimumColors(this GameSets input)
     {
-        int minRed = 0;
-        int minGreen = 0;
-        int minBlue = 0;
-        foreach (var set in input.Sets)
-        {
-            if (set.Red > minRed)
-                minRed = set.Red;
-            if (set.Green > minGreen)
-                minGreen = set.Green;
-            if (set.Blue > minBlue)
-                minBlue = set.Blue;
-        }
+        int minRed = input.Sets.Max(s => s.Red);
+        int minGreen = input.Sets.Max(s => s.Green);
+        int minBlue = input.Sets.Max(s => s.Blue);
+
         return new(minRed, minGreen, minBlue);
     }
 

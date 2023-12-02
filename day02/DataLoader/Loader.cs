@@ -21,7 +21,7 @@ public static class Loader
         // Get Sets
         List<ColorSet> gameSets = new();
         var sets = input.Split(": ")[1].Split("; ");
-        foreach(var set in sets)
+        foreach (var set in sets)
         {
             ColorSet gameSet = GetSet(set);
             gameSets.Add(gameSet);
@@ -32,14 +32,10 @@ public static class Loader
     public static ColorSet GetSet(string set)
     {
         // 1 green, 1 blue, 1 red
-        int red = 0;
-        int green = 0;
-        int blue = 0;
-
         var colors = set.Split(", ").ToList();
-        red = int.Parse(colors.FirstOrDefault(c => c.Contains("red"))?.Split(" ")[0] ?? "0");
-        green = int.Parse(colors.FirstOrDefault(c => c.Contains("green"))?.Split(" ")[0] ?? "0");
-        blue = int.Parse(colors.FirstOrDefault(c => c.Contains("blue"))?.Split(" ")[0] ?? "0");
+        int red = int.Parse(colors.FirstOrDefault(c => c.Contains("red"))?.Split(" ")[0] ?? "0");
+        int green = int.Parse(colors.FirstOrDefault(c => c.Contains("green"))?.Split(" ")[0] ?? "0");
+        int blue = int.Parse(colors.FirstOrDefault(c => c.Contains("blue"))?.Split(" ")[0] ?? "0");
         return new ColorSet(red, green, blue);
     }
 
@@ -52,12 +48,11 @@ public static class Loader
     public static IEnumerable<string> LoadRaw(this string fileName)
     {
         List<string> output = new();
-        if (File.Exists(fileName))
-        {
-            using var reader = new StreamReader(fileName);
-            while (!reader.EndOfStream)
-                output.Add(reader.ReadLine()!);
-        }
+        if (!File.Exists(fileName)) return output;
+
+        using var reader = new StreamReader(fileName);
+        while (!reader.EndOfStream)
+            output.Add(reader.ReadLine()!);
         return output;
     }
 }
