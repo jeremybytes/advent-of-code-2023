@@ -20,37 +20,22 @@ public static class DataParser
 
     public static int GetCardWinnerCount(this Card input)
     {
-        int value = 0;
-        foreach (var winner in input.Winners)
-        {
-            if (input.MyNumbers.Contains(winner))
-            {
-                value++;
-            }
-        }
-        return value;
+        return input.Winners.Intersect(input.MyNumbers).Count();
     }
 
     public static List<int> GetCardValues(this List<Card> input)
     {
-        List<int> output = [];
-        foreach (var card in input)
-        {
-            output.Add(card.GetCardValue());
-        }
-        return output;
+        return input.Select(s => s.GetCardValue()).ToList();
     }
 
     public static int GetCardValue(this Card input)
     {
+        int winningCount = input.Winners.Intersect(input.MyNumbers).Count();
         int value = 0;
-        foreach (var winner in input.Winners)
+        for (int i = 1; i <= winningCount; i++)
         {
-            if (input.MyNumbers.Contains(winner))
-            {
-                if (value == 0) value++;
-                else value *= 2;
-            }
+            if (value == 0) value++;
+            else value *= 2;
         }
         return value;
     }

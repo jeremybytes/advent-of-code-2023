@@ -1,5 +1,4 @@
 using DataLoader;
-using NUnit.Framework.Interfaces;
 using static DataLoader.Loader;
 
 namespace Day04.Tests

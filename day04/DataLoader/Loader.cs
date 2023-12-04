@@ -10,23 +10,21 @@ public static class Loader
         foreach(string line in input)
         {
             var numbers = line.Split(":")[1].Split("|");
-            var winnerString = numbers[0].Split(" ");
-            List<int> winners = [];
-            foreach(var num in winnerString)
-            {
-                if (string.IsNullOrWhiteSpace(num))
-                    continue;
-                winners.Add(int.Parse(num.Trim()));
-            }
 
-            var mineString = numbers[1].Split(" ");
-            List<int> mine = [];
-            foreach(var num in mineString)
-            {
-                if (string.IsNullOrWhiteSpace(num))
-                    continue;
-                mine.Add(int.Parse(num.Trim()));
-            }
+            List<int> winners = 
+                numbers[0]
+                .Split(" ")
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Select(n => int.Parse(n.Trim()))
+                .ToList();
+
+            List<int> mine =
+                numbers[1]
+                .Split(" ")
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Select(n => int.Parse(n.Trim()))
+                .ToList();
+
             cards.Add(new(winners, mine));
         }
         return cards;
