@@ -116,7 +116,7 @@ public static class DataParser
         return actuals;
     }
 
-    public static List<int> GetGearProducts(this List<((int, int), int)> actualGears)
+    public static List<int> GetGearRatios(this List<((int, int), int)> actualGears)
     {
         List<int> output = new();
         while(actualGears.Count > 0)

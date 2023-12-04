@@ -8,7 +8,7 @@ var result = allData.GetAllNumbers().GetPartNumbers(allData).Sum();
 
 Console.WriteLine(result);
 
-var gearResult = allData.GetAllNumbers().GetPotentialGears(allData).GetActualGears().GetGearProducts().Sum();
+var gearResult = allData.GetAllNumbers().GetPotentialGears(allData).GetActualGears().GetGearRatios().Sum();
 
 Console.WriteLine(gearResult);
 

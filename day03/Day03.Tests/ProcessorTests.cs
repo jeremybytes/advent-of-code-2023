@@ -76,7 +76,7 @@ public class Tests
         List<string> data = testdata.Split(Environment.NewLine).ToList();
         List<int> expected = new() { 16345, 451490 };
 
-        List<int> actual = data.GetAllNumbers().GetPotentialGears(data).GetActualGears().GetGearProducts().ToList();
+        List<int> actual = data.GetAllNumbers().GetPotentialGears(data).GetActualGears().GetGearRatios().ToList();
 
         Assert.That(actual, Is.EqualTo(expected));
     }
@@ -88,7 +88,7 @@ public class Tests
         List<string> data = testdata.Split(Environment.NewLine).ToList();
         int expected = 467835;
 
-        int actual = data.GetAllNumbers().GetPotentialGears(data).GetActualGears().GetGearProducts().Sum();
+        int actual = data.GetAllNumbers().GetPotentialGears(data).GetActualGears().GetGearRatios().Sum();
 
         Assert.That(actual, Is.EqualTo(expected));
     }
