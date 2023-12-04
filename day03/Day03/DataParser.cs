@@ -22,7 +22,7 @@ public static class DataParser
         List<PartNumber> output = new();
         string numberString = "";
         int index = -1;
-        //foreach(var c in input)
+
         for (int i = 0; i < input.Length; i++)
         {
             switch (input[i])
