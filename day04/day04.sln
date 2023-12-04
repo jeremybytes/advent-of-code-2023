@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day04", "Day04\Day04.csproj", "{44F14FC1-D7AA-4408-A3E4-B495AB38E277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLoader", "DataLoader\DataLoader.csproj", "{D9FC8923-0A88-46C8-931C-A0A70022F2BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day04.Tests", "Day04.Tests\Day04.Tests.csproj", "{C6A831A6-0753-4609-AAA4-9573B8760384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44F14FC1-D7AA-4408-A3E4-B495AB38E277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F14FC1-D7AA-4408-A3E4-B495AB38E277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F14FC1-D7AA-4408-A3E4-B495AB38E277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F14FC1-D7AA-4408-A3E4-B495AB38E277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FC8923-0A88-46C8-931C-A0A70022F2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FC8923-0A88-46C8-931C-A0A70022F2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FC8923-0A88-46C8-931C-A0A70022F2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FC8923-0A88-46C8-931C-A0A70022F2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A831A6-0753-4609-AAA4-9573B8760384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A831A6-0753-4609-AAA4-9573B8760384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A831A6-0753-4609-AAA4-9573B8760384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A831A6-0753-4609-AAA4-9573B8760384}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B6FC93D-E278-4467-AECC-859C01771219}
+	EndGlobalSection
+EndGlobal
