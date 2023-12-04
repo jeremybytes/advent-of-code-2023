@@ -4,7 +4,7 @@ public static class Loader
 {
     public static List<string> LoadRaw(this string fileName)
     {
-        List<string> output = new();
+        List<string> output = [];
         if (!File.Exists(fileName)) return output;
 
         using var reader = new StreamReader(fileName);

@@ -2,13 +2,11 @@
 
 public static class DataParser
 {
-    public static List<((int, int), int)> PotentialGears = new();
-
     public record PartNumber(int Number, int Length, int Row, int Index, bool Include) { }
 
     public static List<PartNumber> GetAllNumbers(this List<string> input)
     {
-        List<PartNumber> output = new();
+        List<PartNumber> output = [];
         for (int i = 0; i < input.Count; i++)
         {
             output.AddRange(input[i].GetNumbersFromLine(i));
@@ -19,7 +17,7 @@ public static class DataParser
     public static List<PartNumber> GetNumbersFromLine(this string input, int row)
     {
         // ..35..633.
-        List<PartNumber> output = new();
+        List<PartNumber> output = [];
         string numberString = "";
         int index = -1;
 
@@ -59,7 +57,7 @@ public static class DataParser
 
     public static List<int> GetPartNumbers(this List<PartNumber> numbers, List<string> allData)
     {
-        List<int> output = new();
+        List<int> output = [];
         foreach(var number in numbers)
         {
             if (IsPartNumber(number, allData))
@@ -96,16 +94,17 @@ public static class DataParser
 
     public static List<((int, int), int)> GetPotentialGears(this List<PartNumber> numbers, List<string> allData)
     {
+        List<((int, int), int)> potentialGears = [];
         foreach (var number in numbers)
         {
-            IsGearAdjacent(number, allData);
+            potentialGears.AddRange(IsGearAdjacent(number, allData));
         }
-        return PotentialGears;
+        return potentialGears;
     }
 
     public static List<((int, int), int)> GetActualGears(this List<((int, int), int)> potentials)
     {
-        List<((int, int), int)> actuals = new();
+        List<((int, int), int)> actuals = [];
         foreach(var potential in potentials)
         {
             if (potentials.Count(p => p.Item1 == potential.Item1) > 1)
@@ -118,7 +117,7 @@ public static class DataParser
 
     public static List<int> GetGearRatios(this List<((int, int), int)> actualGears)
     {
-        List<int> output = new();
+        List<int> output = [];
         while(actualGears.Count > 0)
         {
             var current = actualGears[0].Item1;
@@ -133,8 +132,9 @@ public static class DataParser
         return output;
     }
 
-    public static void IsGearAdjacent(PartNumber partNumber, List<string> allData)
+    public static List<((int, int), int)> IsGearAdjacent(PartNumber partNumber, List<string> allData)
     {
+        List<((int, int), int)> potentialGears = [];
         (int, int) startIndex =
             (int.Max(partNumber.Row - 1, 0),
              int.Max(partNumber.Index - 1, 0));
@@ -144,7 +144,8 @@ public static class DataParser
 
         var gearLocation = ContainsGear(startIndex, endIndex, allData);
         if (gearLocation is not null)
-            PotentialGears.Add(((gearLocation.Value), partNumber.Number));
+            potentialGears.Add(((gearLocation.Value), partNumber.Number));
+        return potentialGears;
     }
 
     private static (int, int)? ContainsGear((int, int) start, (int, int) end, List<string> allData)
