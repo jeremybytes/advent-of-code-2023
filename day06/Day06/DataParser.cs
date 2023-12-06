@@ -10,12 +10,7 @@ public static class DataParser
 
     public static long GetWinners(this List<long> possibles, long best)
     {
-        int winners = 0;
-        foreach(var distance in possibles)
-        {
-            if (distance > best) winners++;
-        }
-        return winners;
+        return possibles.Where(d => d > best).Count();
     }
 
     public static List<long> GetPossibles(this long length)
