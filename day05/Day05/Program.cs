@@ -1,6 +1,8 @@
 ﻿using DataLoader;
 using Day05;
 
+Console.WriteLine($"Start Time: {DateTimeOffset.Now:HH:mm:ss}");
+
 var fileName = AppDomain.CurrentDomain.BaseDirectory + "input.txt";
 var allData = Loader.LoadRaw(fileName);
 
@@ -49,6 +51,7 @@ for (int i = 0; i < ranges.Count; i += 2)
 }
 
 Console.WriteLine($"Minimum: {currentMin}");
+Console.WriteLine($"End Time: {DateTimeOffset.Now:HH:mm:ss}");
 
 // Part 1: 174137457
 // Part 2: 1493866
