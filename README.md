@@ -9,4 +9,6 @@ Happy Holidays!
 **Day 1**  
 I accidentally did Part 2-style parsing first (so got the answer to Part 1 wrong initially). I commented out some code to get the Part 1 answer. So the tests are all around Part 2.  
 
+*Made it to Day 8!* (so far)  
+
 ---
