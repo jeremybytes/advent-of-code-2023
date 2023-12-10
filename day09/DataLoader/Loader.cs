@@ -9,8 +9,7 @@ public static class Loader
 
     public static List<long> GetSequence(this string input)
     {
-        var splits = input.Split(" ");
-        return splits.Select(s => long.Parse(s)).ToList();
+        return input.Split(" ").Select(s => long.Parse(s)).ToList();
     }
 
     public static List<string> LoadRaw(this string fileName)

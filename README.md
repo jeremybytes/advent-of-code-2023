@@ -11,4 +11,6 @@ I accidentally did Part 2-style parsing first (so got the answer to Part 1 wrong
 
 *Made it to Day 8!* (so far)  
 
+It looks like I hit my stopping point with Day 10 Part 2.
+
 ---
